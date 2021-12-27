@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import Result from "./components/result/Result";
+import Buttons from "./components/buttons/Buttons";
+import Cubs from "./components/cubs/Cubs";
+import roll from "./shared/helpers/api";
+import {useEffect, useState} from "react";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [diceData, setDiceData] = useState();
+    const [load, setLoad] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => setLoad(false), 500)
+    }, [])
+
+    const rollDice = async () => {
+        setLoad(true)
+        const result = await roll();
+        setTimeout(() => {
+            setDiceData(result.dice);
+        }, 1200)
+
+        setTimeout(() => {
+            setLoad(false)
+        }, 3800)
+    }
+
+    return (
+        <div className="App d-flex flex-colum content-around">
+            <Result show={load} data={diceData}/>
+            <Cubs
+                data={diceData}
+                load={load}
+            />
+            <Buttons disabled={load} data={diceData} rollDice={rollDice}/>
+        </div>
+    );
 }
 
 export default App;

@@ -1,0 +1,59 @@
+.cub-wrapper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.cub-wrapper > .cub {
+  transition: transform 2s ease 0s;
+  position: absolute;
+  transform-origin: 50px 50px;
+  transform-style: preserve-3d;
+}
+
+.face, .beam, .loading {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border: 2px solid #d3d3d3;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.face.face-1 {
+  transform: translateZ(50px);
+}
+
+.face.face-2 {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.face.face-3 {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.face.face-4 {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.face.face-5 {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.face.face-6 {
+  transform: rotateY(-180deg) translateZ(50px);
+}
+
+.beam {
+  border: none;
+  border-radius: 0;
+}
+
+.dot {
+  background-color: #000;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px #000;
+}

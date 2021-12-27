@@ -11,3 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.mb-1 {
+  margin-bottom: .5rem;
+}
+
+.mt-1 {
+  margin-top: .5rem;
+}
+
+.m-1 {
+  margin: .5rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.content-center {
+  justify-content: center;
+}
+
+.content-around {
+  justify-content: space-around;
+}
+
+.content-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center{
+  align-self: center;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-4 {
+  gap: 4rem;
+}
+
+.flex-colum {
+  flex-direction: column;
+}
